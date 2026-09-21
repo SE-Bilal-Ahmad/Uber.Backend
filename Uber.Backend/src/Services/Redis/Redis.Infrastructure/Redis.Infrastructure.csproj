@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="E:\Programming\C#_projects\Uber.Backend\Uber.Backend\redis.proto" GrpcServices="Server" />
+    <Protobuf Include="..\..\..\..\redis.proto" GrpcServices="Server" />
     <PackageReference Include="Google.Protobuf" />
     <PackageReference Include="Grpc.AspNetCore" />
     <PackageReference Include="Grpc.Tools">

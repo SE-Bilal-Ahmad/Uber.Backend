@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Protobuf Include="E:\Programming\C#_projects\Uber.Backend\Uber.Backend\vehicle.proto" GrpcServices="Server" />
+    <Protobuf Include="..\..\..\..\vehicle.proto" GrpcServices="Server" />
     <ProjectReference Include="..\..\..\BuildingBlocks\BuildingBlocks\BuildingBlocks.csproj" />
     <ProjectReference Include="..\Vehicle.Application\Vehicle.Application.csproj" />
     <ProjectReference Include="..\Vehicle.Domain\Vehicle.Domain.csproj" />

@@ -4,8 +4,7 @@ using Redis.Infrastructure;
 using Redis.Infrastructure.Services;
 using StackExchange.Redis;
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddApplicationService(builder.Configuration)
-    .AddInfrastructureLayer();
+
 builder.Services.AddGrpc();
 
 var app = builder.Build();
