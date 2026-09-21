@@ -9,4 +9,5 @@ namespace Driver.Application.Services;
 public interface ISignalRService
 {
     void SendRideRequestToDriver(RiderRequestedLocation riderRequestedLocation);
+    void SendTripStartedStatus(TripStarted tripStarted);
 }

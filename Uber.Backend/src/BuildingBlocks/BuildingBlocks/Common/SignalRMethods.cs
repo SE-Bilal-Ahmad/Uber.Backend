@@ -12,6 +12,7 @@ public static class SignalRMethods
     //Yeah i know its too long
     public const string NOTIFY_RIDER_DRIVER_REACHED_PICKUP_SPOT = "DriverReachedPickUpSpot";
     public const string NOTIFY_RIDER_DRIVER_REACHED_DROPOFF_SPOT = "DriverReachedDropOffSpot";
+    public const string NOTIFY_RIDER_TRIP_STARTED = "TripStarted";
 
 
 }

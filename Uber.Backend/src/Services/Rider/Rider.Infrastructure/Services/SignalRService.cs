@@ -124,4 +124,24 @@ public class SignalRService(IConnectionManager connectionManager, IHubContext<Up
             }
         }
     }
+
+    public async void NotifyRiderTripStarted(TripStartedEvent spot)
+    {
+        var connectionId = connectionManager.GetConnectionId(spot.RiderId);
+        if(connectionId != null)
+        {
+            try
+            {
+                await hubContext.Clients.Client(connectionId).SendAsync(SignalRMethods.NOTIFY_RIDER_TRIP_STARTED,
+                spot.RiderId,
+                spot.DriverId,
+                spot.RideId
+                );
+            }
+            catch (Exception e)
+            {
+                logger.LogError(e.ToString());
+            }
+        }
+    }
 }

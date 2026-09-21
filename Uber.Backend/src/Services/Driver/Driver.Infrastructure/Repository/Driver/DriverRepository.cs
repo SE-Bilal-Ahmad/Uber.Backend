@@ -7,6 +7,7 @@ using BuildingBlocks.Messaging.Events.Driver;
 using Driver.Application.Data;
 using Driver.Application.Services;
 using Driver.Domain.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using DriverModel = Driver.Domain.Models.Driver.Driver;
 
@@ -24,6 +25,14 @@ public class DriverRepository(IApplicationDbContext dbContext,ILogger<DriverRepo
         {
             logger.LogError(e.Message);
         }
+    }
+
+    public async Task<DriverModel> GetDriverDetails(Guid driverId)
+    {
+        var driver = await dbContext.Drivers.FirstOrDefaultAsync(x => x.Id == DriverId.Of(driverId));
+        if (driver == null)
+            throw new InvalidDataException("Driver not found");
+        return driver;
     }
 
     private DriverModel MapDriverEvent(CreateDriverEvent driver)

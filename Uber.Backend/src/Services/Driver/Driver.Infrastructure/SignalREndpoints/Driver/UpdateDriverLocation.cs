@@ -7,6 +7,7 @@ using Driver.Application.Ride.Commands.AcceptRide;
 using Driver.Application.Ride.Commands.SendContinuousTripLocation;
 using Driver.Application.Trip.ReachedDropOffSpot;
 using Driver.Application.Trip.ReachedPickUpSpot;
+using Driver.Application.Trip.StartedTrip;
 using Mapster;
 using MediatR;
 using Microsoft.AspNetCore.SignalR;
@@ -34,6 +35,11 @@ public class UpdateDriverLocationHub(ISender sender, ILogger<UpdateDriverLocatio
     public async Task ReachedRider(ReachedPickUpSpotModel reached)
     {
         await sender.Send(new ReachedPickUpSpotCommand(reached));
+    }
+
+    public async Task StartTrip(TripStarted tripStarted)
+    {
+        await sender.Send(new StartedTripCommand(tripStarted));
     }
 
     public async Task ReachedDropOff(ReachedDropOffSpotModel reached)

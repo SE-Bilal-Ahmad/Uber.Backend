@@ -33,4 +33,9 @@ public class SignalRService(IConnectionManager connectionManager, IHubContext<Up
             }
         }
     }
+
+    public void SendTripStartedStatus(TripStarted tripStarted)
+    {
+        throw new NotImplementedException();
+    }
 }

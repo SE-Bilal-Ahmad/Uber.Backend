@@ -15,4 +15,5 @@ public interface ISignalRService
     void SendTripLocationToRiders(ContinuousTripUpdates tripLocation);
     void NotifyRiderDriverReached(ReachedPickUpSpotEvent spot);
     void NotidyRiderDriverReachedDropOff(ReachedDropOffSpotEvent spot);
+    void NotifyRiderTripStarted(TripStartedEvent riderId);
 }
